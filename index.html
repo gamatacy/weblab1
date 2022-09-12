@@ -26,16 +26,23 @@
             border-radius: 20px;
         }
 
-        .header-cell{
+        .group-cell{
             background-color: whitesmoke;
             border-radius: 20px;
         }
+
+        .var-cell{
+            background-color: whitesmoke;
+            border-radius: 20px;
+            transition: 0.2s;
+        }
+
+        
 
         #student-info{
             text-align: center;
             font-family: 'Montserrat', sans-serif;
             font-size: 28px;
-           
         }
 
         #student-info:hover{
@@ -158,6 +165,20 @@
             background-color: whitesmoke;
         }
 
+        .git-link{
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .var-cell:hover .git-link{
+            color: whitesmoke;
+            transition: 0.2s;
+        }        
+
+        .var-cell:hover{
+            background-color: #1f1f1f;
+            transition: 0.2s;
+        }
 
     </style>
 </head>
@@ -167,11 +188,11 @@
             <td class="main-header-cell">
                 <h1 id="student-info" nickname="@gamatacy">Воронин Иван Александрович</h1>
             </td>
-            <td class="header-cell">
+            <td class="group-cell">
                 <h2>P32312</h2>
             </td>
-            <td class="header-cell">
-                <h2>№3104</h2>
+            <td class="var-cell">
+                <h2><a href="https://github.com/gamatacy/weblab1" class="git-link">№3104</a></h2>
             </td>
         </tr>
         <tr>
