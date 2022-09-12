@@ -1,5 +1,6 @@
 # Web Programming laboratory work 1
 ## Ваня Воронин P32312
+## https://se.ifmo.ru/~s333580/index.html
 
 ### Разработанная HTML-страница должна удовлетворять следующим требованиям:
 
