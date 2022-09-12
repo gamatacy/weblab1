@@ -6,7 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 1</title>
+    <link rel="icon" href="img/punisher.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.6.1.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function changeValue(value){
+            $("#x-value").val(value);
+            $(":button").each(function(){
+                if($(this).val() == $("#x-value").val()){
+                    $(this).removeClass();
+                    $(this).toggleClass("x-button-activated");
+                }else{
+                    $(this).removeClass("x-button-activated");
+                    $(this).addClass("x-button");
+                }
+            })
+        }
+    </script>
+    <script>
+        $(window).on('load',function(){
+            $(window).click(() => $(".loader").fadeOut(1000));
+        })
+    </script>
     <style>
         body{
             background-color: #1f1f1f;
@@ -118,6 +140,15 @@
             background-color: whitesmoke;
         }
 
+        .x-button-activated{
+            position: relative;
+            left: 8%;
+            border-radius: 15px;
+            font-size: 30px;
+            color: black;
+            background-color: whitesmoke;
+        }
+
         .y-text-area{
             margin-left: 8%;
             height: 30px;
@@ -160,7 +191,7 @@
         }
 
         #check-button:active{
-            font-size: 30px;
+            font-size: 40px;
             color: black;
             background-color: whitesmoke;
         }
@@ -180,9 +211,31 @@
             transition: 0.2s;
         }
 
+        .loader{
+            background-color: #191919;
+            overflow: hidden;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right:0;
+            bottom:0;
+            z-index: 100000;
+        }
+
+        .loader img{
+            display: block;
+            margin-top: 10%;
+            margin-left: 40%;
+            width: 300px;
+            height: 400px;
+        }
+
     </style>
 </head>
 <body>
+    <div class="loader">
+        <div class="loader"><img src="img/punisher2.png" id="img-load"></div>
+    </div>
     <table id="main-table">
         <tr>
             <td class="main-header-cell">
@@ -196,6 +249,7 @@
             </td>
         </tr>
         <tr>
+           <form id="coords-form" method="get">
             <td class="input-cell">
                 <table id="coord-table">
                     <tr>
@@ -203,41 +257,43 @@
                             X
                         </td>
                         <td>
-                            <button class="x-button">-2</button>
-                            <button class="x-button">-1.5</button>
-                            <button class="x-button">-1</button>
-                            <button class="x-button">-0.5</button>
-                            <button class="x-button">0</button>
-                            <button class="x-button">0.5</button>
-                            <button class="x-button">1</button>
-                            <button class="x-button">1.5</button>
-                            <button class="x-button">2</button>
+                            <input type="button" onclick="changeValue(this.value)" value="-2" class="x-button">
+                            <input type="button" onclick="changeValue(this.value)" value="-1.5" class="x-button">
+                            <input type="button" onclick="changeValue(this.value)" value="-1" class="x-button">
+                            <input type="button" onclick="changeValue(this.value)" value="-0.5" class="x-button">
+                            <input type="button" onclick="changeValue(this.value)" value="0" class="x-button">
+                            <input type="button" onclick="changeValue(this.value)" value="0.5" class="x-button">
+                            <input type="button" onclick="changeValue(this.value)" value="1" class="x-button">
+                            <input type="button" onclick="changeValue(this.value)" value="1.5" class="x-button">
+                            <input type="button" onclick="changeValue(this.value)" value="2" class="x-button">
+                            <input type="hidden" name="x" id="x-value" value="">
                         </td>
                     </tr>
                     <tr>
                         <td class="coord-name">Y</td>
                         <td>
-                            <input type="text" class="y-text-area" placeholder="                                 Число от -5 до 5"><!-- ужасно стыдно:(--->
+                            <input type="text" class="y-text-area" name="y" placeholder="                                 Число от -5 до 5"><!-- ужасно стыдно :( --->
                         </td>
                     </tr>
                     <tr>
                         <td class="coord-name">R</td>
                         <td>
                             <label for="check-1" class="r-label">1</label>
-                            <input type="checkbox" class="r-checkbox" id="check-1">
+                            <input type="checkbox" class="r-checkbox" id="check-1" value="1" name="r">
                             <label for="check-2" class="r-label">2</label>
-                            <input type="checkbox" class="r-checkbox" id="check-2">
+                            <input type="checkbox" class="r-checkbox" id="check-2" value="2" name="r">
                             <label for="check-3" class="r-label">3</label>
-                            <input type="checkbox" class="r-checkbox" id="check-3">
+                            <input type="checkbox" class="r-checkbox" id="check-3" value="3" name="r">
                             <label for="check-4" class="r-label">4</label>
-                            <input type="checkbox" class="r-checkbox" id="check-4">
+                            <input type="checkbox" class="r-checkbox" id="check-4" value="4" name="r">
                             <label for="check-5" class="r-label">5</label>
-                            <input type="checkbox" class="r-checkbox" id="check-5">
+                            <input type="checkbox" class="r-checkbox" id="check-5" value="5" name="r">
                         </td>
                     </tr>
                 </table>
                 <button type="submit" id="check-button">check</button>
             </td>
+           </form>
             <td class="coord-area-cell" colspan="2"></td>
         </tr>
         <tr>
