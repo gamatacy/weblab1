@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +11,13 @@
     <script src="js/jquery-3.6.1.js"></script>
     <script src="js/main.js"></script>
     <script>
-        function changeValue(value){
+        function changeValue(value) {
             $("#x-value").val(value);
-            $(":button").each(function(){
-                if($(this).val() == $("#x-value").val()){
+            $(":button").each(function () {
+                if ($(this).val() == $("#x-value").val()) {
                     $(this).removeClass();
                     $(this).toggleClass("x-button-activated");
-                }else{
+                } else {
                     $(this).removeClass("x-button-activated");
                     $(this).addClass("x-button");
                 }
@@ -25,16 +25,16 @@
         }
     </script>
     <script>
-        $(window).on('load',function(){
+        $(window).on('load', function () {
             $(window).click(() => $(".loader").fadeOut(1000));
         })
     </script>
     <style>
-        body{
+        body {
             background-color: #1f1f1f;
         }
 
-        #main-table{
+        #main-table {
             height: 100%;
             width: 100%;
             max-width: 1240px;
@@ -43,55 +43,54 @@
             border-spacing: 10px;
         }
 
-        .main-header-cell{
+        .main-header-cell {
             background-color: whitesmoke;
             border-radius: 20px;
         }
 
-        .group-cell{
+        .group-cell {
             background-color: whitesmoke;
             border-radius: 20px;
         }
 
-        .var-cell{
+        .var-cell {
             background-color: whitesmoke;
             border-radius: 20px;
             transition: 0.2s;
         }
 
-        
 
-        #student-info{
+        #student-info {
             text-align: center;
             font-family: 'Montserrat', sans-serif;
             font-size: 28px;
         }
 
-        #student-info:hover{
+        #student-info:hover {
             font-size: 0;
         }
 
-        #student-info:hover::after{
+        #student-info:hover::after {
             content: attr(nickname);
             font-size: 28px;
             font-weight: 800;
         }
 
 
-        h2{
+        h2 {
             text-align: center;
             font-family: 'Montserrat', sans-serif;
             font-size: 28px;
         }
 
-        .input-cell{
+        .input-cell {
             background-color: whitesmoke;
             border-radius: 20px;
             width: 45%;
             height: 500px;
         }
-        
-        .coord-area-cell{
+
+        .coord-area-cell {
             background-image: url("img/area.png");
             background-size: cover;
             background-position: center;
@@ -99,25 +98,25 @@
             height: 500px;
         }
 
-        #results-cell{
+        #results-cell {
             height: 250px;
-            background-color: whitesmoke;
+            background-color: #1f1f1f;
             border-radius: 20px;
         }
 
-        #coord-table{
+        #coord-table {
             width: 100%;
             height: 75%;
         }
 
-        .coord-name{
+        .coord-name {
             padding-left: 15px;
             font-family: 'Montserrat', sans-serif;
             font-size: 36px;
             font-weight: bold;
         }
 
-        .x-button{
+        .x-button {
             position: relative;
             left: 8%;
             border-radius: 15px;
@@ -128,19 +127,19 @@
             transition: 0.25s;
         }
 
-        .x-button:hover{
+        .x-button:hover {
             font-size: 30px;
             transition-duration: 0.2s;
 
         }
 
-        .x-button:active{
+        .x-button:active {
             font-size: 30px;
             color: black;
             background-color: whitesmoke;
         }
 
-        .x-button-activated{
+        .x-button-activated {
             position: relative;
             left: 8%;
             border-radius: 15px;
@@ -149,7 +148,7 @@
             background-color: whitesmoke;
         }
 
-        .y-text-area{
+        .y-text-area {
             margin-left: 8%;
             height: 30px;
             width: 120px;
@@ -157,72 +156,85 @@
             transition: 1s;
         }
 
-        .y-text-area:hover{
+        .y-text-area:hover {
             width: 240px;
             transition: 1s;
         }
 
-        .r-label{
+        .r-label {
             margin-left: 8%;
             font-family: 'Montserrat', sans-serif;
             font-size: 24px;
             font-weight: bold;
         }
 
-        .r-checkbox{
+        .r-checkbox {
             margin-right: 16px;
         }
 
-        #check-button{
+        .check-button {
             position: relative;
-            left: 38%;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 15px;
             background-color: #1f1f1f;
             font-family: 'Montserrat', sans-serif;
             font-size: 36px;
             color: whitesmoke;
-            transition: 0.25s;
+            transition: 0.2s;
         }
 
-        #check-button:hover{
+        .check-button-active {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+            background-color: whitesmoke;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            color: #1f1f1f;
+            transition: 0.2s;
+        }
+
+        .check-button:hover {
             font-size: 40px;
             transition-duration: 0.2s;
 
         }
 
-        #check-button:active{
+        .check-button:active {
             font-size: 40px;
             color: black;
             background-color: whitesmoke;
         }
 
-        .git-link{
+        .git-link {
             text-decoration: none;
             transition: 0.2s;
         }
 
-        .var-cell:hover .git-link{
+        .var-cell:hover .git-link {
             color: whitesmoke;
             transition: 0.2s;
-        }        
+        }
 
-        .var-cell:hover{
+        .var-cell:hover {
             background-color: #1f1f1f;
             transition: 0.2s;
         }
 
-        .loader{
+        .loader {
             background-color: #191919;
             overflow: hidden;
             position: fixed;
             left: 0;
             top: 0;
-            right:0;
-            bottom:0;
+            right: 0;
+            bottom: 0;
             z-index: 100000;
         }
 
-        .loader img{
+        .loader img {
             display: block;
             margin-top: 10%;
             margin-left: 40%;
@@ -230,75 +242,110 @@
             height: 400px;
         }
 
+        .result-cell {
+            vertical-align: top;
+            border-radius: 15px;
+            background-color: whitesmoke;
+            color: #1f1f1f;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            padding: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .result-cell:hover{
+            color: whitesmoke;
+            background-color: #1f1f1f;
+            transition: 0.3s;
+        }
+
+        .results-table {
+            border-spacing: 10px;
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
-    <div class="loader">
-        <div class="loader"><img src="img/punisher2.png" id="img-load"></div>
-    </div>
-    <table id="main-table">
-        <tr>
-            <td class="main-header-cell">
-                <h1 id="student-info" nickname="@gamatacy">Воронин Иван Александрович</h1>
-            </td>
-            <td class="group-cell">
-                <h2>P32312</h2>
-            </td>
-            <td class="var-cell">
-                <h2><a href="https://github.com/gamatacy/weblab1" class="git-link">№3104</a></h2>
-            </td>
-        </tr>
-        <tr>
-           <form id="coords-form" method="get">
-            <td class="input-cell">
-                <table id="coord-table">
-                    <tr>
-                        <td class="coord-name">
-                            X
-                        </td>
-                        <td>
-                            <input type="button" onclick="changeValue(this.value)" value="-2" class="x-button">
-                            <input type="button" onclick="changeValue(this.value)" value="-1.5" class="x-button">
-                            <input type="button" onclick="changeValue(this.value)" value="-1" class="x-button">
-                            <input type="button" onclick="changeValue(this.value)" value="-0.5" class="x-button">
-                            <input type="button" onclick="changeValue(this.value)" value="0" class="x-button">
-                            <input type="button" onclick="changeValue(this.value)" value="0.5" class="x-button">
-                            <input type="button" onclick="changeValue(this.value)" value="1" class="x-button">
-                            <input type="button" onclick="changeValue(this.value)" value="1.5" class="x-button">
-                            <input type="button" onclick="changeValue(this.value)" value="2" class="x-button">
-                            <input type="hidden" name="x" id="x-value" value="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="coord-name">Y</td>
-                        <td>
-                            <input type="text" class="y-text-area" name="y" placeholder="                                 Число от -5 до 5"><!-- ужасно стыдно :( --->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="coord-name">R</td>
-                        <td>
-                            <label for="check-1" class="r-label">1</label>
-                            <input type="checkbox" class="r-checkbox" id="check-1" value="1" name="r">
-                            <label for="check-2" class="r-label">2</label>
-                            <input type="checkbox" class="r-checkbox" id="check-2" value="2" name="r">
-                            <label for="check-3" class="r-label">3</label>
-                            <input type="checkbox" class="r-checkbox" id="check-3" value="3" name="r">
-                            <label for="check-4" class="r-label">4</label>
-                            <input type="checkbox" class="r-checkbox" id="check-4" value="4" name="r">
-                            <label for="check-5" class="r-label">5</label>
-                            <input type="checkbox" class="r-checkbox" id="check-5" value="5" name="r">
-                        </td>
-                    </tr>
-                </table>
-                <button type="submit" id="check-button">check</button>
-            </td>
-           </form>
-            <td class="coord-area-cell" colspan="2"></td>
-        </tr>
-        <tr>
-            <td id="results-cell" colspan="3"></td>
-        </tr>
-    </table>
+<div class="loader">
+    <div class="loader"><img src="img/punisher2.png" id="img-load"></div>
+</div>
+<table id="main-table">
+    <tr>
+        <td class="main-header-cell">
+            <h1 id="student-info" nickname="@gamatacy">Воронин Иван Александрович</h1>
+        </td>
+        <td class="group-cell">
+            <h2>P32312</h2>
+        </td>
+        <td class="var-cell">
+            <h2><a href="https://github.com/gamatacy/weblab1" class="git-link">№3104</a></h2>
+        </td>
+    </tr>
+    <tr>
+        <td class="input-cell">
+            <table id="coord-table">
+                <tr>
+                    <td class="coord-name">
+                        X
+                    </td>
+                    <td>
+                        <input type="button" onclick="changeValue(this.value)" value="-2" class="x-button">
+                        <input type="button" onclick="changeValue(this.value)" value="-1.5" class="x-button">
+                        <input type="button" onclick="changeValue(this.value)" value="-1" class="x-button">
+                        <input type="button" onclick="changeValue(this.value)" value="-0.5" class="x-button">
+                        <input type="button" onclick="changeValue(this.value)" value="0" class="x-button">
+                        <input type="button" onclick="changeValue(this.value)" value="0.5" class="x-button">
+                        <input type="button" onclick="changeValue(this.value)" value="1" class="x-button">
+                        <input type="button" onclick="changeValue(this.value)" value="1.5" class="x-button">
+                        <input type="button" onclick="changeValue(this.value)" value="2" class="x-button">
+                        <input type="hidden" name="x" id="x-value" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="coord-name">Y</td>
+                    <td>
+                        <input type="text" class="y-text-area" name="y"
+                               placeholder="                                 Число от -5 до 5">
+                        <!-- ужасно стыдно :( --->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="coord-name">R</td>
+                    <td>
+                        <label for="check-1" class="r-label">1</label>
+                        <input type="checkbox" class="r-checkbox" id="check-1" value="1" name="r">
+                        <label for="check-2" class="r-label">2</label>
+                        <input type="checkbox" class="r-checkbox" id="check-2" value="2" name="r">
+                        <label for="check-3" class="r-label">3</label>
+                        <input type="checkbox" class="r-checkbox" id="check-3" value="3" name="r">
+                        <label for="check-4" class="r-label">4</label>
+                        <input type="checkbox" class="r-checkbox" id="check-4" value="4" name="r">
+                        <label for="check-5" class="r-label">5</label>
+                        <input type="checkbox" class="r-checkbox" id="check-5" value="5" name="r">
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" class="check-button">check</button>
+        </td>
+        <td class="coord-area-cell" colspan="2"></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <table class="results-table">
+                <tr class="result-row">
+                    <th class="result-cell">result</th>
+                    <th class="result-cell">X</th>
+                    <th class="result-cell">Y</th>
+                    <th class="result-cell">R</th>
+                    <th class="result-cell">time</th>
+                    <th class="result-cell">execution time</th>
+                    <th class="result-cell">attempt</th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
