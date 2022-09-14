@@ -23,12 +23,12 @@
                 }
             })
         }
-    </script>
+    </script>  
     <script>
         $(window).on('load', function () {
             $(window).click(() => $(".loader").fadeOut(1000));
         })
-    </script>
+    </script> 
     <style>
         body {
             background-color: #1f1f1f;
@@ -150,6 +150,10 @@
         }
 
         .y-text-area {
+            background: #1f1f1f;
+            color: whitesmoke;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
             margin-left: 8%;
             height: 30px;
             width: 120px;
@@ -158,7 +162,7 @@
         }
 
         .y-text-area:hover {
-            width: 240px;
+            width: 300px;
             transition: 1s;
         }
 
@@ -266,11 +270,17 @@
             width: 100%;
         }
 
+        .img-load{
+            display: none;
+        }
+
+      
+
     </style>
 </head>
-<body>
+<body>  
 <div class="loader">
-    <div class="loader"><img src="img/punisher2.png" id="img-load"></div>
+    <div class="loader"><img src="img/punisher2.png" id="load-img"></div>
 </div>
 <table id="main-table">
     <tr>
@@ -308,7 +318,7 @@
                     <td class="coord-name">Y</td>
                     <td>
                         <input type="text" class="y-text-area" name="y"
-                               placeholder="                                 Число от -5 до 5">
+                               placeholder="                       Число от -5 до 5">
                         <!-- ужасно стыдно :( --->
                     </td>
                 </tr>
