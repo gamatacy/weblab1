@@ -39,11 +39,11 @@ $(document).ready(function () {
     }
 
     function checkY(y) {
-        if(String(y) == "clear"){
+        if (String(y) == "clear") {
             clearData()
             return false
         }
-        if (String(y).length > 4){
+        if (String(y).length > 4) {
             return false
         }
         return (y <= 5 && y >= -5)
@@ -61,34 +61,33 @@ $(document).ready(function () {
                 $(".check-button").removeClass("check-button-active")
             },
             1000)
-
-    }
-    
-    function loadData(){
-       let storage = localStorage.getItem("storage");
-       if (storage == null){
-            localStorage.setItem("storage", '{"object": []}');
-       }else{
-            JSON.parse(storage).object.forEach(element => {
-              appendData(element);
-          });
-       }
     }
 
-    function saveData(data){
+    function loadData() {
+        let storage = localStorage.getItem("storage");
+        if (storage == null) {
+            localStorage.setItem("storage", '{"rows": []}');
+        } else {
+            JSON.parse(storage).rows.forEach(element =>
+                appendData(element)
+            )
+        }
+    }
+
+    function saveData(data) {
         const storage = localStorage.getItem("storage");
         const arr = JSON.parse(storage);
-        arr.object.push(data);
+        arr.rows.push(data);
         localStorage.setItem("storage", JSON.stringify(arr));
     }
 
-    function clearData(){
+    function clearData() {
         localStorage.clear()
     }
 
     function appendData(data) {
         let time = new Date(data.time);
-        let exectime = (data.execution).toString().slice(0,19);
+        let exectime = (data.execution).toString().slice(0, 19);
         $(".results-table").append(
             `<tr class='result-row'>
              <th class='result-cell'>${data.result}</th>
