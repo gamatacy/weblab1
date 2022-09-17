@@ -70,9 +70,9 @@ $(document).ready(function () {
     function loadData() {
         let storage = localStorage.getItem("storage");
         if (storage == null) {
-            localStorage.setItem("storage", '{"rows": []}');
+            localStorage.setItem("storage", '{"data": []}');
         } else {
-            JSON.parse(storage).rows.forEach(element =>
+            JSON.parse(storage).data.forEach(element =>
                 appendData(element)
             )
         }
@@ -82,7 +82,7 @@ $(document).ready(function () {
     function saveData(data) {
         const storage = localStorage.getItem("storage");
         const arr = JSON.parse(storage);
-        arr.rows.push(data);
+        arr.data.push(data);
         localStorage.setItem("storage", JSON.stringify(arr));
     }
 
