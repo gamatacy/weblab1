@@ -2,6 +2,8 @@ $(document).ready(function () {
     let attempts = 0;
     loadData();
 
+
+    //Takes coordinates, validates them and sends get request
     $(".check-button").click(function () {
             let x = $("#x-value").val();
             let y = $(".y-text-area").val();
@@ -53,6 +55,7 @@ $(document).ready(function () {
         return !(x === undefined)
     }
 
+    //Swap text in "check" button for a bit if coordinates aren't valid
     function invalidValue() {
         $(".check-button").html("Invalid value")
         $(".check-button").toggleClass("check-button-active")
@@ -63,6 +66,7 @@ $(document).ready(function () {
             1000)
     }
 
+    //Loads data from localStorage
     function loadData() {
         let storage = localStorage.getItem("storage");
         if (storage == null) {
@@ -74,6 +78,7 @@ $(document).ready(function () {
         }
     }
 
+    //Saves data to localStorage
     function saveData(data) {
         const storage = localStorage.getItem("storage");
         const arr = JSON.parse(storage);
@@ -81,10 +86,12 @@ $(document).ready(function () {
         localStorage.setItem("storage", JSON.stringify(arr));
     }
 
+    //Clears localStorage
     function clearData() {
         localStorage.clear()
     }
 
+    //Appends one row to the html table
     function appendData(data) {
         let time = new Date(data.time);
         let exectime = (data.execution).toString().slice(0, 19);
