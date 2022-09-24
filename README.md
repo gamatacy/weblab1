@@ -12,4 +12,4 @@
  - Отступы элементов ввода должны задаваться в процентах.
  - Страница должна содержать сценарий на языке JavaScript, осуществляющий валидацию значений, вводимых пользователем в поля формы. Любые некорректные значения (например, буквы в координатах точки или отрицательный радиус) должны блокироваться.
 
-![literallyme](https://otkritkis.com/wp-content/uploads/2022/07/hoo8e.gif)
+![x](https://sun9-81.userapi.com/impg/mVgHn4v3lI3xd0ng6jLlDeEF_wKXRdWtwjkvBQ/5cszQiFrDz8.jpg?size=720x1261&quality=96&sign=73fad325d445e81edc985728aa03f71d&type=album)
