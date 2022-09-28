@@ -15,8 +15,13 @@ $(document).ready(function () {
                 }
             })
 
+            if (String(y) == "clear") {
+                clearData()
+                return false
+            }
+            
             if (!checkCoordsValid(x, y, r)) {
-                invalidValue()
+                changeCheckButtonText("Invalid value")
                 return false
             }
 
@@ -41,10 +46,6 @@ $(document).ready(function () {
     }
 
     function checkY(y) {
-        if (String(y) == "clear") {
-            clearData()
-            return false
-        }
         if (String(y).length > 4) {
             return false
         }
@@ -56,8 +57,8 @@ $(document).ready(function () {
     }
 
     //Swap text in "check" button for a bit if coordinates aren't valid
-    function invalidValue() {
-        $(".check-button").html("Invalid value")
+    function changeCheckButtonText(message) {
+        $(".check-button").html(message)
         $(".check-button").toggleClass("check-button-active")
         setTimeout(() => {
                 $(".check-button").html("check")
@@ -89,6 +90,8 @@ $(document).ready(function () {
     //Clears localStorage
     function clearData() {
         localStorage.clear()
+        clearResultsTable()
+        changeCheckButtonText("cleared")
     }
 
     //Appends one row to the html table
@@ -108,6 +111,23 @@ $(document).ready(function () {
             `
         )
         attempts++
+    }
+
+    //Delete all results and reset attempts counter
+    function clearResultsTable(){
+        $(".results-table").empty()
+        $(".results-table").append(
+            `<tr class="result-row">
+            <th class="result-cell">result</th>
+            <th class="result-cell">X</th>
+            <th class="result-cell">Y</th>
+            <th class="result-cell">R</th>
+            <th class="result-cell">time</th>
+            <th class="result-cell">execution time</th>
+            <th class="result-cell">attempt</th>
+        </tr>`
+         )
+         attempts = 0
     }
 
 });
